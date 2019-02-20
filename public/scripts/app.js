@@ -1,7 +1,6 @@
 //Client-side JS logic
-
 $(() => {
-
+// Functions------------------
 const createTweetElement = function(tweet) { //returns jquery object
   let tweetHtml = `
     <article class=tweet>
@@ -26,4 +25,29 @@ const renderTweets = function(tweets) {
     $tweet.prependTo('#tweet-feed');
   }
 }
+
+const loadTweets = function() {
+  $.get('/tweets', (tweets) =>{
+    renderTweets(tweets.reverse());
+    });
+}
+
+//End of Functions---------------------------
+loadTweets();
+
+//New Tweet Render with ajax post
+$('#new-tweet-form').submit((event)=> {
+  event.preventDefault();
+  const newContent = $('#new-tweet-form').serialize().replace('text=','').replace('+',' ');
+  if (newContent > 140) {
+    alert('Character limit exceeded');
+  }
+  else {
+    $.post('/tweets',newContent)
+    .then((req, res) => { 
+      //renderTweets(newTweet);
+    });
+  }
+});
+
 });
