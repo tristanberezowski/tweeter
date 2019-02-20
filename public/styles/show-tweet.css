@@ -8,14 +8,14 @@
 }
 
 .tweet header {
-  background-color: lightgray;
+  background-color: #E8E8E8;
   padding: 3px 3px 3px 3px;
 }
 
 .tweet header h5 {
   padding: 4px 0 0 0;
   margin: 0 0 0 0;
-  font-size: 1.7em;
+  font-size: 2em;
   display: inline-block;
   vertical-align: top;
 }
@@ -38,4 +38,16 @@
   border-top: 1px solid #E8E8E8;
   align-items: center;
   padding-left: 8px;
+}
+
+.tweet header div {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 15px;
+  padding-left: 90px;
+}
+
+.tweet:hover {
+  filter: brightness(95%);
+  color: black;
 }
