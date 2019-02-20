@@ -14,8 +14,10 @@ $(document).ready(function() {
 
   $('#new-tweet-form').on('submit', function(event) {
     event.preventDefault();
-    $('#new-tweet-textarea').val('');
-    $(this).children('.counter').text('140');
+    if ($('.counter').text() >= 0) {
+      $('#new-tweet-textarea').val('');
+      $(this).children('.counter').text('140').css('color', '');
+    }
   });
 
 

@@ -38,9 +38,12 @@ loadTweets();
 //New Tweet Render with ajax post
 $('#new-tweet-form').submit((event)=> {
   event.preventDefault();
-  const newContent = $('#new-tweet-form').serialize().replace('text=','').replace('+',' ');
-  if (newContent > 140) {
+  const newContent = $('#new-tweet-textarea').serialize().replace('text=','');
+  if (newContent.length > 140) {
     alert('Character limit exceeded');
+  }
+  else if(newContent === '') {
+    alert('Nothing was entered');
   }
   else {
     $.post('/tweets',newContent)
