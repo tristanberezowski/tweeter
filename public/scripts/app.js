@@ -1,38 +1,29 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+//Client-side JS logic
 
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": {
-      "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-      "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-      "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-    },
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
+$(() => {
+
+const createTweetElement = function(tweet) { //returns jquery object
+  let tweetHtml = `
+    <article class=tweet>
+      <header>
+        <img src="${tweet.user.avatars.small}">
+        <h5>${tweet.user.name}</h5>
+        <div>${tweet.user.handle}</div>
+      </header>
+      <p>${tweet.content.text}</p>
+      <footer>
+        <div>${Math.floor(tweet.created_at / 86400)} days ago</div>
+      </footer>
+    </article>
+  `;
+  let $tweetHtml = $(tweetHtml);
+  return $tweetHtml;
 }
 
-var $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
-function createTweetElement(tweet) {
-  const $article = $("<article>").addClass("tweet");
-  const $header = $("<header>");
-  const $img = $("<img>").attr('src', tweet.user.avatars.small);
-  const $h5 = $("<h5>");
-  const $handle = $("<div>");
-  const $footer = $("<footer>");
-  const $datepassed = $("<div>");
+const renderTweets = function(tweets) {
+  for (let tweet of tweets) {
+    let $tweet = createTweetElement(tweet);
+    $tweet.prependTo('#tweet-feed');
+  }
 }
+});
