@@ -34,21 +34,3 @@ body {
   margin: auto;
   background-color: white;
  }
-
- .tweet {
-   border: 1px;
-   border-style: solid;
-   border-color: grey;
-   border-radius: 5px;
-   margin
-   
- }
-
- .tweet header {
-   background-color: lightgray;
- }
- 
- .tweet header img {
-   border-radius: 20%;
-   
- }
