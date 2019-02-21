@@ -27,10 +27,16 @@ const renderTweets = function(tweets) {
 }
 
 const loadTweets = function() {
-  $.get('/tweets', (tweets) =>{
+  $.get('/tweets', (tweets) => {
     renderTweets(tweets.reverse());
-    });
-}
+  });
+};
+
+const loadTweet = function() {
+  $.get('/tweets', (tweets) => {
+    renderTweets([tweets[tweets.length - 1]]);
+  });
+};
 
 //End of Functions---------------------------
 loadTweets();
@@ -38,7 +44,7 @@ loadTweets();
 //New Tweet Render with ajax post
 $('#new-tweet-form').submit((event)=> {
   event.preventDefault();
-  const newContent = $('#new-tweet-textarea').serialize().replace('text=','');
+  const newContent = $('#new-tweet-textarea').serialize();
   if (newContent.length > 140) {
     alert('Character limit exceeded');
   }
@@ -46,9 +52,9 @@ $('#new-tweet-form').submit((event)=> {
     alert('Nothing was entered');
   }
   else {
-    $.post('/tweets',newContent)
-    .then((req, res) => { 
-      //renderTweets(newTweet);
+    $.post('/tweets', newContent)
+    .then((req, res) => {
+      loadTweet();
     });
   }
 });
