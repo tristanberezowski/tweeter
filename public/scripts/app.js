@@ -78,5 +78,4 @@ $('#compose-toggle').on('click', function(event) {
     $('#compose-toggle').css('filter', 'brightness(100%)');
   }
 });
-
 });
