@@ -9,7 +9,7 @@ const createTweetElement = function(tweet) { //returns jquery object
         <h5>${tweet.user.name}</h5>
         <div>${tweet.user.handle}</div>
       </header>
-      <p>${tweet.content.text}</p>
+      <p>${escape(tweet.content.text)}</p>
       <footer>
         <div>${Math.floor(tweet.created_at / 86400)} days ago</div>
       </footer>
@@ -38,6 +38,12 @@ const loadTweet = function() {
   });
 };
 
+const escape = function(text) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(text));
+  return div.innerHTML;
+}
+
 //End of Functions---------------------------
 loadTweets();
 
@@ -48,7 +54,7 @@ $('#new-tweet-form').submit((event)=> {
   if (newContent.length - 5 > 140) {
     alert('Character limit exceeded');
   }
-  else if(newContent.length === 5 || newContent === null) {
+  else if(newContent.length === 5) {
     alert('Nothing was entered');
   }
   else {
