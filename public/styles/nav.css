@@ -2,6 +2,8 @@
   height: 80px;
   background-color: #00a087;
   position: fixed;
+  display: flex;
+  align-items: center;
   top: 0;
   width: 100%;
   color: #e8fdff;
@@ -17,6 +19,16 @@
 #nav-bar .logo {
   height: 80px;
   width: 80px;
-  float: left;
   padding-right: 10px;
+}
+
+#compose-toggle {
+  border: solid 1px black;
+  border-radius: 7%;
+  float: right;
+  font-weight: 700;
+  padding: 15px 9px;
+  margin-left: auto;
+  background-color: #e8fdff;
+  color: #018f79;
 }
