@@ -45,10 +45,10 @@ loadTweets();
 $('#new-tweet-form').submit((event)=> {
   event.preventDefault();
   const newContent = $('#new-tweet-textarea').serialize();
-  if (newContent.length > 140) {
+  if (newContent.length - 5 > 140) {
     alert('Character limit exceeded');
   }
-  else if(newContent === '') {
+  else if(newContent.length === 5 || newContent === null) {
     alert('Nothing was entered');
   }
   else {
