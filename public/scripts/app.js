@@ -64,7 +64,15 @@ $('#new-tweet-form').submit((event)=> {
     });
   }
 });
-
-
+//Compose button in nav bar on click effects
+$('#compose-toggle').on('click', function(event) {
+  if ( $('.new-tweet').css('display') === 'none') {
+    $('.new-tweet').slideToggle(200, () => {
+      $('#new-tweet-textarea').focus();
+  })}
+  else {
+    $('.new-tweet').slideToggle(200)
+  }
+});
 
 });

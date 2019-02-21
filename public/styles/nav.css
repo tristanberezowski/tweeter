@@ -32,3 +32,8 @@
   background-color: #e8fdff;
   color: #018f79;
 }
+
+#compose-toggle:hover {
+  cursor: pointer;
+  filter: brightness(110%);
+}
