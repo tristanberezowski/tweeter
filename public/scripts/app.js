@@ -53,9 +53,11 @@ $('#new-tweet-form').submit((event)=> {
   const newContent = $('#new-tweet-textarea').serialize();
   if (newContent.length - 5 > 140) {
     $('#new-tweet-error').text('Character limit exceeded').css('display', 'flex');
+    setTimeout( () => { $('#new-tweet-error').css('display', 'none'); }, 2000);
   }
   else if(newContent.length === 5) {
     $('#new-tweet-error').text('Cannot create an empty tweet').css('display', 'flex');
+    setTimeout( () => { $('#new-tweet-error').css('display', 'none'); }, 2000);
   }
   else {
     $.post('/tweets', newContent)
