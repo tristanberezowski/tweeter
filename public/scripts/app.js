@@ -52,10 +52,10 @@ $('#new-tweet-form').submit((event)=> {
   event.preventDefault();
   const newContent = $('#new-tweet-textarea').serialize();
   if (newContent.length - 5 > 140) {
-    alert('Character limit exceeded');
+    $('#new-tweet-error').text('Character limit exceeded').css('display', 'flex');
   }
   else if(newContent.length === 5) {
-    alert('Nothing was entered');
+    $('#new-tweet-error').text('Cannot create an empty tweet').css('display', 'flex');
   }
   else {
     $.post('/tweets', newContent)
@@ -69,9 +69,11 @@ $('#compose-toggle').on('click', function(event) {
   if ( $('.new-tweet').css('display') === 'none') {
     $('.new-tweet').slideToggle(200, () => {
       $('#new-tweet-textarea').focus();
+      $('#compose-toggle').css('filter', 'brightness(100%)');
   })}
   else {
-    $('.new-tweet').slideToggle(200)
+    $('.new-tweet').slideToggle(200);
+    $('#compose-toggle').css('filter', 'brightness(110%)');
   }
 });
 
