@@ -3,6 +3,7 @@
   padding: 0px 10px 0 10px;
   margin: 3em 2em 2em 2em;
   border-radius: 5px;
+  display: none;
 }
 
 .counter {
@@ -26,6 +27,10 @@
 
 .new-tweet input {
   margin-bottom: 15px;
+}
+
+.new-tweet input:hover {
+  cursor: pointer;
 }
 
 .error {

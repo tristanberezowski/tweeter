@@ -71,11 +71,11 @@ $('#compose-toggle').on('click', function(event) {
   if ( $('.new-tweet').css('display') === 'none') {
     $('.new-tweet').slideToggle(200, () => {
       $('#new-tweet-textarea').focus();
-      $('#compose-toggle').css('filter', 'brightness(100%)');
+      $('#compose-toggle').css('filter', 'brightness(110%)');
   })}
   else {
     $('.new-tweet').slideToggle(200);
-    $('#compose-toggle').css('filter', 'brightness(110%)');
+    $('#compose-toggle').css('filter', 'brightness(100%)');
   }
 });
 
