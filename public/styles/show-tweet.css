@@ -45,7 +45,7 @@
 }
 
 .tweet .time-stamp {
-  width: 250px;
+  width: 480px; 
 }
 
 .tweet .all-icons {
@@ -58,6 +58,7 @@
   width: 7%;
   height: 7%;
   margin-left: 5px;
+  opacity: 0;
 }
 
 .tweet header div {
@@ -69,4 +70,8 @@
 .tweet:hover {
   filter: brightness(95%);
   color: black;
+}
+
+.tweet:hover .icon {
+  opacity: 1;
 }
