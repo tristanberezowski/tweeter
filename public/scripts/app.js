@@ -46,7 +46,6 @@ const escape = function(text) {
 
 const dateSince = function(epoch) {
   let diff = Date.now() - epoch;
-  console.log(diff / 3600000 / 60);
   if (diff / 31556926000 >= 1)
     return `${Math.floor(diff / 31556926000)} years ago`;
   if (diff / 2629743000 >= 1)

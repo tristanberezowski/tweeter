@@ -10,21 +10,24 @@
 .tweet header {
   background-color: #E8E8E8;
   padding: 3px 3px 3px 3px;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tweet header h5 {
-  padding: 4px 0 0 0;
-  margin: 0 0 0 0;
   font-size: 2em;
-  display: inline-block;
-  vertical-align: top;
+  margin-right: auto;
+  padding-top: 5px;
+  margin-top: auto;
 }
 
 .tweet header img {
   border-radius: 10%;
-  margin: 5px;
-  width: 18%;
-  display: inline-block;
+  height: 60px;
+  margin-right: 20px;
+  margin-left: 6px;
 }
 
 .tweet p {
@@ -42,10 +45,9 @@
 }
 
 .tweet header div {
-  display: inline-block;
-  vertical-align: top;
-  padding-top: 15px;
-  padding-left: 90px;
+  margin-bottom: 30px;
+  font-size: .97em;
+  padding-right: 3px;
 }
 
 .tweet:hover {
