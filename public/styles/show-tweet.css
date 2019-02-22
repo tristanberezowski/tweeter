@@ -44,6 +44,22 @@
   padding-left: 8px;
 }
 
+.tweet .time-stamp {
+  width: 250px;
+}
+
+.tweet .all-icons {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.tweet .icon {
+  width: 7%;
+  height: 7%;
+  margin-left: 5px;
+}
+
 .tweet header div {
   margin-bottom: 30px;
   font-size: .97em;

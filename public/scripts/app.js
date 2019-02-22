@@ -11,7 +11,12 @@ const createTweetElement = function(tweet) { //returns jquery object
       </header>
       <p>${escape(tweet.content.text)}</p>
       <footer>
-        <div>${dateSince(tweet.created_at)}</div>
+        <div class='time-stamp'>${dateSince(tweet.created_at)}</div>
+        <div class="all-icons">
+        <img class="icon" src="../images/flag.png">
+        <img class="icon" src="../images/dove.png">
+        <img class="icon" src="../images/like.png">
+        </div>
       </footer>
     </article>
   `;
