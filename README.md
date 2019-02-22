@@ -19,3 +19,11 @@ This repository is the result of Tristan Berezowski learning and applying their 
 - MongoDB
 - Chance
 - md5
+
+## Screenshots
+
+- ![Main Page](https://github.com/tristanberezowski/tweeter/blob/master/screenshots/home-main.png)
+
+- ![New Tweet](https://github.com/tristanberezowski/tweeter/blob/master/screenshots/tweeter-compose.png)
+
+- ![Error Message](https://github.com/tristanberezowski/tweeter/blob/master/screenshots/error-message.png)
