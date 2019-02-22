@@ -11,7 +11,7 @@ const createTweetElement = function(tweet) { //returns jquery object
       </header>
       <p>${escape(tweet.content.text)}</p>
       <footer>
-        <div>${Math.floor(tweet.created_at / 31556926)} years ago</div>
+        <div>${dateSince(tweet.created_at)}</div>
       </footer>
     </article>
   `;
@@ -42,6 +42,26 @@ const escape = function(text) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(text));
   return div.innerHTML;
+}
+
+const dateSince = function(epoch) {
+  let diff = Date.now() - epoch;
+  console.log(diff / 3600000 / 60);
+  if (diff / 31556926000 >= 1)
+    return `${Math.floor(diff / 31556926000)} years ago`;
+  if (diff / 2629743000 >= 1)
+    return `${Math.floor(diff / 2629743000)} months ago`;
+  if (diff / 604800000 >= 1)
+    return `${Math.floor(diff / 604800000)} weeks ago`;
+  if (diff / 86400000 >= 1)
+    return `${Math.floor(diff / 86400000)} days ago`;
+  if (diff / 3600000 >= 1)
+    return `${Math.floor(diff / 3600000)} hours ago`;
+  if (diff / 3600000 * 60 >= 1)
+    return `${Math.floor(diff / 3600000 * 60)} minutes ago`;
+  if (diff / 3600000 * 60 * 60 >= 1)
+    return `${Math.floor(diff / 3600000 * 60 * 60)} seconds ago`;
+  return 'Just now'
 }
 
 //End of Functions---------------------------
