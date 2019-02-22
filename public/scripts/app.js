@@ -11,7 +11,7 @@ const createTweetElement = function(tweet) { //returns jquery object
       </header>
       <p>${escape(tweet.content.text)}</p>
       <footer>
-        <div>${Math.floor(tweet.created_at / 86400)} days ago</div>
+        <div>${Math.floor(tweet.created_at / 31556926)} years ago</div>
       </footer>
     </article>
   `;
@@ -28,7 +28,7 @@ const renderTweets = function(tweets) {
 
 const loadTweets = function() {
   $.get('/tweets', (tweets) => {
-    renderTweets(tweets.reverse());
+    renderTweets(tweets);
   });
 };
 
