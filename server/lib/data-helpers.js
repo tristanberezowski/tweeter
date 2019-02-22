@@ -15,7 +15,7 @@ module.exports = function makeDataHelpers(db) {
       db.collection('tweets').find().toArray((err, results) => {
         if (err) throw err;
 
-        callback(null, true);
+        callback(null, results);
       });
     }
   }
